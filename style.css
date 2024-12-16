@@ -10,7 +10,11 @@ canvas{
     background: rgb(0, 0, 0);
     width: 100%;
 }
-
+.button-container {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+  }
 button{
     background-color: yellow;
     font-size: 1.5rem;
