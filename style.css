@@ -1,0 +1,21 @@
+body {
+    background: rgb(1, 255, 44);
+    color: #eee;
+    font-family: monospace;
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+canvas{
+    background: rgb(0, 0, 0);
+    width: 100%;
+}
+
+button{
+    background-color: yellow;
+    font-size: 1.5rem;
+}
+button:hover{
+    cursor: pointer;
+    background-color: green;
+}
