@@ -92,38 +92,54 @@ Restartbutton.addEventListener("click", () => {
 });
 
 
-leftbutton.addEventListener("touchstart", () => {
+leftbutton.addEventListener("touchstart", (event) => {
+    event.preventDefault(); // Prevent scrolling
+
     playerClass.left = true
 });
 
-leftbutton.addEventListener("touchend", () => {
+leftbutton.addEventListener("touchend", (event) => {
+    event.preventDefault(); // Prevent scrolling
+
     playerClass.left = false;
 
 });
 
-rightbutton.addEventListener("touchstart", () => {
+rightbutton.addEventListener("touchstart", (event) => {
+    event.preventDefault(); // Prevent scrolling
+
     playerClass.right = true
 });
 
-rightbutton.addEventListener("touchend", () => {
+rightbutton.addEventListener("touchend", (event) => {
+    event.preventDefault(); // Prevent scrolling
+
     playerClass.right = false;
 
 });
 
-upbutton.addEventListener("touchstart", () => {
+upbutton.addEventListener("touchstart", (event) => {
+    event.preventDefault(); // Prevent scrolling
+
     playerClass.up = true
 });
 
-upbutton.addEventListener("touchend", () => {
+upbutton.addEventListener("touchend", (event) => {
+    event.preventDefault(); // Prevent scrolling
+
     playerClass.up = false;
 
 });
 
-downbutton.addEventListener("touchstart", () => {
+downbutton.addEventListener("touchstart", (event) => {
+    event.preventDefault(); // Prevent scrolling
+
     playerClass.down = true
 });
 
-downbutton.addEventListener("touchend", () => {
+downbutton.addEventListener("touchend", (event) => {
+    event.preventDefault(); // Prevent scrolling
+
     playerClass.down = false;
 });
 
