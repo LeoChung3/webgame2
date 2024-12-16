@@ -8,6 +8,7 @@
 import Player from "./Player.js"
 import Objectives from "./objectives.js"
 import Cannonmanager from "./CannonManager.js"
+import grid from "./grid.js"
 
 const ctx = canvas.getContext("2d");
 const Restartbutton  = document.getElementById("restart");
@@ -20,22 +21,16 @@ const rightbutton  = document.getElementById("right");
 const playerClass = new Player();
 const objectiveClass = new Objectives();
 const cannonmanagerClass = new Cannonmanager();
+const gridclass = new grid();
 
 objectiveClass.createblobs();
 
 function frame(){
+    
     if (playerClass.alive){
-        playerClass.update(ctx); // updates the players position
         ctx.clearRect(0,0,canvas.width,canvas.height);
-        objectiveClass.check(playerClass); // checks if the player has consumed any of the blobs
-        objectiveClass.drawblobs(ctx); // draws all blobs on to the canvas
-        
-        cannonmanagerClass.shoot(playerClass); // creates a bullet to shoot from the 4 cannons
-        cannonmanagerClass.move(ctx); // moves all bullets
-        cannonmanagerClass.drawbullets(ctx); // draws all bullets to the canvas
-        cannonmanagerClass.draw(ctx); // draws all cannons to the canas
-        cannonmanagerClass.checkplayerstatus(playerClass); // checks if any bullets has hit the player
-
+        playerClass.update(ctx); // updates the players position
+        gridclass.drawgrid(ctx);        
         playerClass.draw(ctx);
     }
     if (!playerClass.alive){
