@@ -92,38 +92,38 @@ Restartbutton.addEventListener("click", () => {
 });
 
 
-leftbutton.addEventListener("mousedown", () => {
+leftbutton.addEventListener("touchstart", () => {
     playerClass.left = true
 });
 
-leftbutton.addEventListener("mouseup", () => {
+leftbutton.addEventListener("touchend", () => {
     playerClass.left = false;
 
 });
 
-rightbutton.addEventListener("mousedown", () => {
+rightbutton.addEventListener("touchstart", () => {
     playerClass.right = true
 });
 
-rightbutton.addEventListener("mouseup", () => {
+rightbutton.addEventListener("touchend", () => {
     playerClass.right = false;
 
 });
 
-upbutton.addEventListener("mousedown", () => {
+upbutton.addEventListener("touchstart", () => {
     playerClass.up = true
 });
 
-upbutton.addEventListener("mouseup", () => {
+upbutton.addEventListener("touchend", () => {
     playerClass.up = false;
 
 });
 
-downbutton.addEventListener("mousedown", () => {
+downbutton.addEventListener("touchstart", () => {
     playerClass.down = true
 });
 
-downbutton.addEventListener("mouseup", () => {
+downbutton.addEventListener("touchend", () => {
     playerClass.down = false;
 });
 
