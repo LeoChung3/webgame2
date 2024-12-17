@@ -15,6 +15,19 @@ canvas{
     justify-content: center;  /* Center horizontally */
     align-items: center;      /* Center vertically */
   }
+
+  .inline {
+    display:inline-block;
+    margin-right:65px;
+ }
+ .inline2 {
+    display:inline-block;
+    margin-right:30px;
+ }
+ .inline3 {
+    display:inline-block;
+    margin-right:300px;
+ }
 button{
     background-color: yellow;
     font-size: 3.5rem;
