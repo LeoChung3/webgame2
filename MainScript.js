@@ -19,6 +19,8 @@ const upbutton  = document.getElementById("up");
 const downbutton  = document.getElementById("down");
 const leftbutton  = document.getElementById("left");
 const rightbutton  = document.getElementById("right");
+const usebutton = document.getElementById("use");
+
 
 const playerClass = new Player();
 const objectiveClass = new Objectives();
@@ -151,6 +153,21 @@ downbutton.addEventListener("touchend", (event) => {
     event.preventDefault(); // Prevent scrolling
 
     playerClass.down = false;
+});
+
+
+usebutton.addEventListener("touchstart", (event) => {
+    event.preventDefault(); // Prevent scrolling
+    inventoryclass.useitem();
+    console.log("cannot use item here");
+
+});
+
+usebutton.addEventListener("touchend", (event) => {
+    event.preventDefault(); // Prevent scrolling
+    inventoryclass.notuseitem();
+
+    console.log("cannot use item here");
 });
 
 requestAnimationFrame(frame)

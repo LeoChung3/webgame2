@@ -6,6 +6,8 @@ export default class inventory {
         this.xpos = 50
         this.ypos = 400
         this.inventory = [];
+        this.asd = false;
+        this.cannotuse = false;
     }
     makegrid (ctx)
         {
@@ -38,7 +40,25 @@ export default class inventory {
                         keya1.draw(ctx);
                     }
             }
+            if(this.cannotuse == true)
+            {
+                ctx.font = "40px Arial";
+                ctx.fillStyle = "red";
+                ctx.fillText("cannot use item here", 340, 400);
+                console.log("asd")
+            }
 
-
-}
+        }
+    useitem()
+    {
+        console.log("11111")
+        this.asd = true;
+        this.cannotuse = true;
+    }
+    notuseitem()
+    {
+        console.log("11111")
+        this.asd = false;
+        this.cannotuse = false;
+    }
 }
