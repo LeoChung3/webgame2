@@ -26,9 +26,10 @@ const gridclass = new grid();
 objectiveClass.createblobs();
 
 function frame(){
-    
+
     if (playerClass.alive){
         ctx.clearRect(0,0,canvas.width,canvas.height);
+        
         playerClass.update(ctx); // updates the players position
         gridclass.drawgrid(ctx);        
         playerClass.draw(ctx);

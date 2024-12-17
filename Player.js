@@ -34,18 +34,13 @@ export default class Player {
     }
     draw(ctx){
 
-        // draws the player on to the canvas 
+        const imagePath = './kami.png';
+        const img = new Image();   
+        img.src = imagePath;
+        ctx.drawImage(img,this.xpos, this.ypos,37, 43); // Scale image to fit canvas
 
-        ctx.save();
-        ctx.beginPath();
-        ctx.fillStyle = "red";
-        ctx.arc(this.xpos, this.ypos, this.size, 0, 2 * Math.PI);
-        ctx.fill();
-        ctx.stroke();
-        ctx.restore();
-        ctx.font = "30px Arial";
-        ctx.fillStyle = "white";
-        ctx.fillText(("points:"+this.points), 0, 25);
+
+        // draws the player on to the canva
     }
     getpos(){
 
