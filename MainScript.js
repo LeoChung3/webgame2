@@ -30,7 +30,6 @@ const inventoryclass = new inventory();
 const keyclass = new key(300,250);
 
 
-
 objectiveClass.createblobs();
 
 function frame(){
@@ -44,7 +43,7 @@ function frame(){
 
         ctx.font = "40px Arial";
         ctx.fillStyle = "red";
-        ctx.fillText("commit 13", 0, 50);
+        ctx.fillText("commit 20", 0, 50);
         
         playerClass.draw(ctx);
         inventoryclass.draw(ctx, keyclass);
@@ -159,6 +158,7 @@ downbutton.addEventListener("touchend", (event) => {
 usebutton.addEventListener("touchstart", (event) => {
     event.preventDefault(); // Prevent scrolling
     inventoryclass.useitem();
+    console.log("111111111111111")
 
     console.log("cannot use item here");
 
