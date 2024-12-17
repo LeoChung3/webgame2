@@ -45,7 +45,6 @@ export default class inventory {
                 ctx.font = "40px Arial";
                 ctx.fillStyle = "red";
                 ctx.fillText("cannot use item here", 340, 400);
-                console.log("asd")
             }
 
         }

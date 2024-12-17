@@ -156,14 +156,16 @@ downbutton.addEventListener("touchend", (event) => {
 });
 
 
-usebutton.addEventListener("touchstart", (event) => {
+usebutton.addEventListener("mousedown", (event) => {
     event.preventDefault(); // Prevent scrolling
     inventoryclass.useitem();
+    playerClass.down = true;
+
     console.log("cannot use item here");
 
 });
 
-usebutton.addEventListener("touchend", (event) => {
+usebutton.addEventListener("mouseup", (event) => {
     event.preventDefault(); // Prevent scrolling
     inventoryclass.notuseitem();
 
