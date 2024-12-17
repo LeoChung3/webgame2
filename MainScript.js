@@ -10,6 +10,7 @@ import Objectives from "./objectives.js"
 import Cannonmanager from "./CannonManager.js"
 import grid from "./grid.js"
 import inventory from "./inventory.js"
+import key from "./key.js"
 
 const ctx = canvas.getContext("2d");
 const Restartbutton  = document.getElementById("restart");
@@ -24,6 +25,9 @@ const objectiveClass = new Objectives();
 const cannonmanagerClass = new Cannonmanager();
 const gridclass = new grid();
 const inventoryclass = new inventory();
+const keyclass = new key(300,250);
+
+
 
 objectiveClass.createblobs();
 
@@ -32,10 +36,11 @@ function frame(){
         ctx.clearRect(0,0,canvas.width,canvas.height);
         
         playerClass.update(ctx); // updates the players position
-        gridclass.drawgrid(ctx);        
+        gridclass.drawgrid(ctx);
+        keyclass.draw(ctx);       
         ctx.font = "40px Arial";
         ctx.fillStyle = "red";
-        ctx.fillText("commit 10", 0, 50);
+        ctx.fillText("commit 12", 0, 50);
         playerClass.draw(ctx);
         inventoryclass.draw(ctx);
     }
