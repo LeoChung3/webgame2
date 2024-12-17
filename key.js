@@ -10,7 +10,7 @@ export default class key {
     draw(ctx)
         {   
             
-                const imagePath = './key2.png';
+                const imagePath = './images/key2.png';
                 const img = new Image();
                 img.src = imagePath;
                 ctx.drawImage(img, this.xpos, this.ypos, 40, 40); // Scale image to fit canvas

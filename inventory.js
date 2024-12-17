@@ -21,7 +21,7 @@ export default class inventory {
         }
     draw(ctx, keya1)
         {
-            const imagePath = './inventory_grid.png';
+            const imagePath = './images/inventory_grid.png';
             const img = new Image();
             img.src = imagePath;
             

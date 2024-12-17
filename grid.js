@@ -20,7 +20,7 @@ export default class grid {
         }
     drawgrid(ctx)
         {
-            const imagePath = './ground1.png';
+            const imagePath = './images/ground1.png';
             const img = new Image();
             img.src = imagePath;
             

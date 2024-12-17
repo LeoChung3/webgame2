@@ -34,7 +34,7 @@ export default class Player {
     }
     draw(ctx){
 
-        const imagePath = './kami.png';
+        const imagePath = './images/kami.png';
         const img = new Image();   
         img.src = imagePath;
         ctx.drawImage(img,this.xpos, this.ypos,37, 43); // Scale image to fit canvas
