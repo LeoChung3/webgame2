@@ -37,12 +37,16 @@ function frame(){
         
         playerClass.update(ctx); // updates the players position
         gridclass.drawgrid(ctx);
-        keyclass.draw(ctx);       
+        keyclass.check(playerClass, inventoryclass); 
+
+
         ctx.font = "40px Arial";
         ctx.fillStyle = "red";
-        ctx.fillText("commit 12", 0, 50);
+        ctx.fillText("commit 13", 0, 50);
+        
         playerClass.draw(ctx);
-        inventoryclass.draw(ctx);
+        inventoryclass.draw(ctx, keyclass);
+        keyclass.draw(ctx);      
     }
     if (!playerClass.alive){
 

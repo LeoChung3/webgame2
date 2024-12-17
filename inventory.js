@@ -5,6 +5,7 @@ export default class inventory {
         this.size = 64; //radius//
         this.xpos = 50
         this.ypos = 400
+        this.inventory = [];
     }
     makegrid (ctx)
         {
@@ -18,7 +19,7 @@ export default class inventory {
             }
             console.log(str)
         }
-    draw(ctx)
+    draw(ctx, keya1)
         {
             const imagePath = './inventory_grid.png';
             const img = new Image();
@@ -27,8 +28,17 @@ export default class inventory {
             for (let i = 0; i < 3; i++) {
                     ctx.drawImage(img, (i * 40), 760, 40, 40); // Scale image to fit canvas
 
-                
+        
             }
-        }
+            for (const i in this.inventory)
+            {
+                if(this.inventory[i] == "key")
+                    {
+                        keya1.changepos((i * 40) + 3, 760 + 3)
+                        keya1.draw(ctx);
+                    }
+            }
 
+
+}
 }
