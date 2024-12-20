@@ -8,6 +8,8 @@ export default class inventory {
         this.inventory = [];
         this.asd = false;
         this.cannotuse = false;
+        this.inventorysize = 2;
+        this.selected = 0;
     }
     makegrid (ctx)
         {
@@ -30,6 +32,7 @@ export default class inventory {
             for (let i = 0; i < 3; i++) {
                     ctx.drawImage(img, (i * 40), 760, 40, 40); // Scale image to fit canvas
 
+                    
         
             }
             for (const i in this.inventory)
@@ -47,6 +50,13 @@ export default class inventory {
                 ctx.fillText("cannot use item here", 340, 400);
             }
 
+            ctx.save();
+            ctx.beginPath();
+            ctx.lineWidth = 5;
+            ctx.rect((this.selected * 40), 760, 40, 40);
+            ctx.stroke();
+            ctx.restore();
+
         }
     useitem()
     {
@@ -59,5 +69,16 @@ export default class inventory {
         console.log("11111")
         this.asd = false;
         this.cannotuse = false;
+    }
+
+    selectplus()
+    {
+        if(this.selected == this.inventorysize) { this.selected = 0;}
+        else{this.selected += 1;}
+    }
+    selectminus()
+    {
+        if(this.selected == 0) { this.selected = this.inventorysize;}
+        else{this.selected -= 1;}
     }
 }

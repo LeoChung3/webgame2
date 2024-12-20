@@ -20,7 +20,8 @@ const downbutton  = document.getElementById("down");
 const leftbutton  = document.getElementById("left");
 const rightbutton  = document.getElementById("right");
 const usebutton = document.getElementById("use");
-
+const leftchoice = document.getElementById("leftchoice");
+const rightchoice = document.getElementById("rightchoice");
 
 const playerClass = new Player();
 const objectiveClass = new Objectives();
@@ -43,7 +44,7 @@ function frame(){
 
         ctx.font = "40px Arial";
         ctx.fillStyle = "red";
-        ctx.fillText("commit 20", 0, 50);
+        ctx.fillText("commit 21", 0, 50);
         
         playerClass.draw(ctx);
         inventoryclass.draw(ctx, keyclass);
@@ -169,6 +170,19 @@ usebutton.addEventListener("touchend", (event) => {
     inventoryclass.notuseitem();
 
     console.log("cannot use item here");
+});
+
+leftchoice.addEventListener("touchstart", (event) => {
+    event.preventDefault(); // Prevent scrolling
+    inventoryclass.selectminus();
+
+});
+
+
+rightchoice.addEventListener("touchstart", (event) => {
+    event.preventDefault(); // Prevent scrolling
+    inventoryclass.selectplus();
+
 });
 
 requestAnimationFrame(frame)
