@@ -191,6 +191,17 @@ rightchoice.addEventListener("touchstart", (event) => {
     inventoryclass.selectplus();
 });
 
+leftchoice.addEventListener("mousedown", (event) => {
+    event.preventDefault(); // Prevent scrolling
+    inventoryclass.selectminus();
+});
+
+
+rightchoice.addEventListener("mousedown", (event) => {
+    event.preventDefault(); // Prevent scrolling
+    inventoryclass.selectplus();
+});
+
 
 
 requestAnimationFrame(frame)

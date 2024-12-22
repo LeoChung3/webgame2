@@ -41,13 +41,25 @@ export default class inventory {
                         keya1.changepos((i * 40) + 3, 760 + 3)
                         keya1.draw(ctx);
                     }
-            }
+
+                if(this.inventory[i] == "heart")
+                    {
+                       const imagePath = './images/heart.png';
+                       const img = new Image();
+                       img.src = imagePath;
+                       ctx.drawImage(img, i * 40, 760, 40, 40);
+                    }
+             }
             ctx.save();
             ctx.beginPath();
             ctx.lineWidth = 5;
             ctx.rect((this.selected * 40), 760, 40, 40);
             ctx.stroke();
             ctx.restore();
+            // for (const i in this.inventory)
+            // {
+            //     console.log(this.inventory[i])
+            // }
 
         }
     useitem()
@@ -57,7 +69,6 @@ export default class inventory {
     notuseitem()
     {
         this.usingitem = false;
-        console.log(this.usingitem)
     }
 
     selectplus()
@@ -73,9 +84,8 @@ export default class inventory {
 
     getitemchecks()
     {
-        for (const i in this.inventory)
-            {
-                if(this.inventory[i] == "key")
+
+                if(this.inventory[this.selected] == "key")
                     {
                         if(this.usingitem == true)
                         {
@@ -84,6 +94,6 @@ export default class inventory {
                         }
                         else{return false;}
                     }
-            }
+            
     }
 }
