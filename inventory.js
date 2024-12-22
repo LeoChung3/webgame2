@@ -82,10 +82,18 @@ export default class inventory {
         else{this.selected -= 1;}
     }
 
-    getitemchecks()
+    getitemchecks(a)
     {
 
-        if(this.inventory[this.selected] == "key")
+        if(this.inventory[this.selected] == a)
+            {
+                if(this.usingitem == true)
+                {
+                    return true;
+                }
+                else{return false;}
+            }
+        if(this.inventory[this.selected] == a)
             {
                 if(this.usingitem == true)
                 {

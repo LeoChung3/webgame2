@@ -10,7 +10,7 @@ import grid from "./grid.js"
 import inventory from "./inventory.js"
 import key from "./key.js"
 import chestobjective from "./chestobjective.js";
-
+import heartobjective from "./heartobjective.js";
 
 const ctx = canvas.getContext("2d");
 const Restartbutton  = document.getElementById("restart");
@@ -28,7 +28,7 @@ const gridclass = new grid();
 const inventoryclass = new inventory();
 const keyclass = new key(300,250);
 const chest = new chestobjective(700, 400);
-
+const heartobj = new heartobjective(380, 100)
 function frame(){
     if (playerClass.alive){
         ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -36,11 +36,12 @@ function frame(){
         playerClass.update(ctx); // updates the players position
         gridclass.drawgrid(ctx);
         chest.draw(ctx, inventoryclass);
+        heartobj.draw(ctx, inventoryclass)
         keyclass.check(playerClass, inventoryclass); 
 
 
         chest.check(playerClass, inventoryclass, ctx);
-
+        heartobj.check(playerClass, inventoryclass, ctx);
         ctx.font = "40px Arial";
         ctx.fillStyle = "red";
         ctx.fillText("commit 21", 0, 50);

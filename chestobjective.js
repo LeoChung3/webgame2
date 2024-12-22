@@ -89,7 +89,7 @@ export default class chestobjective
     checkifusingkey(inventory)
     {
        
-            this.usingkey = inventory.getitemchecks();
+            this.usingkey = inventory.getitemchecks("key");
         
     }
 }
