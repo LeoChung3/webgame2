@@ -54,10 +54,19 @@ export default class chestobjective
                 ctx.stroke();
                 ctx.restore();
 
+
                 const imagePath = './images/heart.png';
                 const img = new Image();
                 img.src = imagePath;
                 ctx.drawImage(img, 150, 150, 450, 450); // Scale image to fit canvas
+
+                ctx.font = "30px Arial";
+                ctx.fillStyle = "red";
+                ctx.fillText("===you found my heart :D, i love you <3===", 110, 600);
+                ctx.fillText("==i fill this gift with love for you, i know im==", 110, 630);
+                ctx.fillText("far away, and you didnt want anything but", 110, 660);
+                ctx.fillText("i hope you're happy with something like this", 110, 690);
+
             }
         }
     }

@@ -6,8 +6,6 @@
 // The live server extension is required to run this program if using VS Code
 
 import Player from "./Player.js"
-import Objectives from "./objectives.js"
-import Cannonmanager from "./CannonManager.js"
 import grid from "./grid.js"
 import inventory from "./inventory.js"
 import key from "./key.js"
@@ -26,15 +24,10 @@ const leftchoice = document.getElementById("leftchoice");
 const rightchoice = document.getElementById("rightchoice");
 
 const playerClass = new Player();
-const objectiveClass = new Objectives();
-const cannonmanagerClass = new Cannonmanager();
 const gridclass = new grid();
 const inventoryclass = new inventory();
 const keyclass = new key(300,250);
 const chest = new chestobjective(700, 400);
-
-
-objectiveClass.createblobs();
 
 function frame(){
     if (playerClass.alive){

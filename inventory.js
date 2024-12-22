@@ -85,15 +85,14 @@ export default class inventory {
     getitemchecks()
     {
 
-                if(this.inventory[this.selected] == "key")
-                    {
-                        if(this.usingitem == true)
-                        {
-                            console.log("using item key ")
-                            return true;
-                        }
-                        else{return false;}
-                    }
+        if(this.inventory[this.selected] == "key")
+            {
+                if(this.usingitem == true)
+                {
+                    return true;
+                }
+                else{return false;}
+            }
             
     }
 }
