@@ -12,14 +12,10 @@ export default class chestobjective
     draw(ctx)
         {
 
-            ctx.save();
-            ctx.beginPath();
-            ctx.lineWidth = 5;
-            ctx.rect(this.xpos, this.ypos, 40, 40);
-            ctx.fillStyle = "#000000";
-            ctx.fill();
-            ctx.stroke();
-            ctx.restore();
+            const imagePath = './images/chest.png';
+            const img = new Image();
+            img.src = imagePath;
+            ctx.drawImage(img, this.xpos, this.ypos, 40, 40);
         }
 
 
@@ -53,6 +49,7 @@ export default class chestobjective
                 ctx.fill();
                 ctx.stroke();
                 ctx.restore();
+
 
 
                 const imagePath = './images/heart.png';
