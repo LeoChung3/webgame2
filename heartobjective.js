@@ -34,7 +34,7 @@ export default class heartobjective
                 ctx.save();
                 ctx.beginPath();
                 ctx.lineWidth = 5;
-                ctx.rect(100, 100, 600, 600);
+                ctx.rect(100, 100, 620, 600);
                 ctx.fillStyle = "#ffffff";
                 ctx.fill();
                 ctx.stroke();
@@ -42,16 +42,25 @@ export default class heartobjective
 
                 ctx.font = "30px Arial";
                 ctx.fillStyle = "red";
-                ctx.fillText("===you found my heart :D, i love you <3===", 110, 130);
-                ctx.fillText("==i fill this gift with love for you, i know im==", 110, 160);
-                ctx.fillText("far away, and you didnt want anything but", 110, 190);
-                ctx.fillText("i hope you're happy with something like this", 110, 220);
-                ctx.fillText("===you found my heart :D, i love you <3===", 110, 250);
-                ctx.fillText("==i fill this gift with love for you, i know im==", 110, 280);
-                ctx.fillText("far away, and you didnt want anything but", 110, 310);
-                ctx.fillText("i hope you're happy with something like this", 110, 340);
-                ctx.fillText("i hope you're happy with something like this", 110, 370);
-                ctx.fillText("i hope you're happy with something like this", 110, 400);
+                ctx.fillText("you've used the first heart kami :D my love", 110, 130);
+                ctx.fillText("I love you my baby, and I know this distance", 110, 160);
+                ctx.fillText("between us is alot, but I promise you, we will", 110, 190);
+                ctx.fillText("see each other again, with open arms", 110, 220);
+                ctx.fillText("embracing one another, I love you my love<3", 110, 250);
+                ctx.fillText("I hope to see your eyes staring in to me", 110, 280);
+                ctx.fillText("I want to feel the warmth of your arms", 110, 310);
+                ctx.fillText("your embrace is what I desire", 110, 340);
+                ctx.fillText("I crave to kiss your lips over and over again", 110, 370);
+                ctx.fillText("I miss hearing your voice in person, having", 110, 400);
+                ctx.fillText("our calls gives me joy, giving me the boost to", 110, 430);
+                ctx.fillText("get me going through my day, and when i cant", 110, 460);
+                ctx.fillText("listen to you, i yearn for it throughout my time", 110, 490);
+                ctx.fillText("i really love you my kami, and i just, hope that", 110, 520);
+                ctx.fillText("something like this, really does show my love", 110, 550);
+                ctx.fillText("your absense hurts, but i know that eventually", 110, 580);
+                ctx.fillText("we'll be able to see each other again, and", 110, 610);
+                ctx.fillText("again and again and again and again", 110, 640);
+                ctx.fillText("kochanie, bardzo kocham cie, tesknie za toba", 110, 670);
 
             }
         }
