@@ -22,7 +22,7 @@ export default class inventory {
             }
             console.log(str)
         }
-    draw(ctx, keya1)
+    draw(ctx, keya1, shovel)
         {
             const imagePath = './images/inventory_grid.png';
             const img = new Image();
@@ -30,8 +30,6 @@ export default class inventory {
             
             for (let i = 0; i < 3; i++) {
                     ctx.drawImage(img, (i * 40), 760, 40, 40); // Scale image to fit canvas
-
-                    
         
             }
             for (const i in this.inventory)
@@ -49,6 +47,17 @@ export default class inventory {
                        img.src = imagePath;
                        ctx.drawImage(img, i * 40, 760, 40, 40);
                     }
+
+                    if(this.inventory[i] == "shovel")
+                        {
+                            shovel.changepos((i * 40) + 3, 760 + 3)
+
+                           const imagePath = './images/shovel.png';
+                           const img = new Image();
+                           img.src = imagePath;
+                           ctx.drawImage(img, i * 40, 760, 40, 40);
+                        }
+                    
              }
             ctx.save();
             ctx.beginPath();
@@ -59,6 +68,7 @@ export default class inventory {
             // for (const i in this.inventory)
             // {
             //     console.log(this.inventory[i])
+            //     console.log("end");
             // }
 
         }

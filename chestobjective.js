@@ -27,6 +27,7 @@ export default class chestobjective
 
         if(this.colliding == true){
             if(this.usingkey == true){
+                console.log("aaaaaaaaaaaaaaaaa")
                 this.open = true; 
                 var heartalreadyobtained = false;
                     for (const i in inventory.inventory)
