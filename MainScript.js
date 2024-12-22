@@ -11,6 +11,8 @@ import Cannonmanager from "./CannonManager.js"
 import grid from "./grid.js"
 import inventory from "./inventory.js"
 import key from "./key.js"
+import chestobjective from "./chestobjective.js";
+
 
 const ctx = canvas.getContext("2d");
 const Restartbutton  = document.getElementById("restart");
@@ -29,6 +31,7 @@ const cannonmanagerClass = new Cannonmanager();
 const gridclass = new grid();
 const inventoryclass = new inventory();
 const keyclass = new key(300,250);
+const chest = new chestobjective(700, 400);
 
 
 objectiveClass.createblobs();
@@ -39,8 +42,11 @@ function frame(){
         
         playerClass.update(ctx); // updates the players position
         gridclass.drawgrid(ctx);
+        chest.draw(ctx, inventoryclass);
         keyclass.check(playerClass, inventoryclass); 
 
+
+        chest.check(playerClass, inventoryclass, ctx);
 
         ctx.font = "40px Arial";
         ctx.fillStyle = "red";
@@ -159,30 +165,32 @@ downbutton.addEventListener("touchend", (event) => {
 usebutton.addEventListener("touchstart", (event) => {
     event.preventDefault(); // Prevent scrolling
     inventoryclass.useitem();
-    console.log("111111111111111")
-
-    console.log("cannot use item here");
-
 });
 
 usebutton.addEventListener("touchend", (event) => {
     event.preventDefault(); // Prevent scrolling
     inventoryclass.notuseitem();
-
-    console.log("cannot use item here");
+});
+usebutton.addEventListener("mousedown", (event) => {
+    event.preventDefault(); // Prevent scrolling
+    inventoryclass.useitem();
 });
 
+usebutton.addEventListener("mouseup", (event) => {
+    event.preventDefault(); // Prevent scrolling
+    inventoryclass.notuseitem();
+});
 leftchoice.addEventListener("touchstart", (event) => {
     event.preventDefault(); // Prevent scrolling
     inventoryclass.selectminus();
-
 });
 
 
 rightchoice.addEventListener("touchstart", (event) => {
     event.preventDefault(); // Prevent scrolling
     inventoryclass.selectplus();
-
 });
+
+
 
 requestAnimationFrame(frame)

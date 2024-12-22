@@ -6,10 +6,9 @@ export default class inventory {
         this.xpos = 50
         this.ypos = 400
         this.inventory = [];
-        this.asd = false;
-        this.cannotuse = false;
         this.inventorysize = 2;
         this.selected = 0;
+        this.usingitem = false;
     }
     makegrid (ctx)
         {
@@ -43,13 +42,6 @@ export default class inventory {
                         keya1.draw(ctx);
                     }
             }
-            if(this.cannotuse == true)
-            {
-                ctx.font = "40px Arial";
-                ctx.fillStyle = "red";
-                ctx.fillText("cannot use item here", 340, 400);
-            }
-
             ctx.save();
             ctx.beginPath();
             ctx.lineWidth = 5;
@@ -60,15 +52,12 @@ export default class inventory {
         }
     useitem()
     {
-        console.log("11111")
-        this.asd = true;
-        this.cannotuse = true;
+        this.usingitem = true;
     }
     notuseitem()
     {
-        console.log("11111")
-        this.asd = false;
-        this.cannotuse = false;
+        this.usingitem = false;
+        console.log(this.usingitem)
     }
 
     selectplus()
@@ -80,5 +69,21 @@ export default class inventory {
     {
         if(this.selected == 0) { this.selected = this.inventorysize;}
         else{this.selected -= 1;}
+    }
+
+    getitemchecks()
+    {
+        for (const i in this.inventory)
+            {
+                if(this.inventory[i] == "key")
+                    {
+                        if(this.usingitem == true)
+                        {
+                            console.log("using item key ")
+                            return true;
+                        }
+                        else{return false;}
+                    }
+            }
     }
 }
