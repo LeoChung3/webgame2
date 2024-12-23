@@ -6,7 +6,7 @@ export default class inventory {
         this.xpos = 50
         this.ypos = 400
         this.inventory = [];
-        this.inventorysize = 2;
+        this.inventorysize = 3;
         this.selected = 0;
         this.usingitem = false;
     }
@@ -28,7 +28,7 @@ export default class inventory {
             const img = new Image();
             img.src = imagePath;
             
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i <= this.inventorysize; i++) {
                     ctx.drawImage(img, (i * 40), 760, 40, 40); // Scale image to fit canvas
         
             }
@@ -48,16 +48,24 @@ export default class inventory {
                        ctx.drawImage(img, i * 40, 760, 40, 40);
                     }
 
-                    if(this.inventory[i] == "shovel")
-                        {
-                            shovel.changepos((i * 40) + 3, 760 + 3)
+                if(this.inventory[i] == "shovel")
+                    {
+                        shovel.changepos((i * 40) + 3, 760 + 3)
 
-                           const imagePath = './images/shovel.png';
-                           const img = new Image();
-                           img.src = imagePath;
-                           ctx.drawImage(img, i * 40, 760, 40, 40);
-                        }
-                    
+                        const imagePath = './images/shovel.png';
+                        const img = new Image();
+                        img.src = imagePath;
+                        ctx.drawImage(img, i * 40, 760, 40, 40);
+                    }
+
+                if(this.inventory[i] == "heart2")
+                    {
+                        const imagePath = './images/heart22.png';
+                        const img = new Image();
+                        img.src = imagePath;
+                        ctx.drawImage(img, i * 40, 760, 40, 40);
+                    }
+            
              }
             ctx.save();
             ctx.beginPath();

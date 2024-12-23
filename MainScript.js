@@ -13,6 +13,7 @@ import chestobjective from "./chestobjective.js";
 import heartobjective from "./heartobjective.js";
 
 import shovel from "./shovel.js";
+import cave from "./cave.js";
 
 const ctx = canvas.getContext("2d");
 const Restartbutton  = document.getElementById("restart");
@@ -32,7 +33,7 @@ const keyclass = new key(300,250);
 const chest = new chestobjective(700, 400);
 const heartobj = new heartobjective(380, 100)
 const shovelclass = new shovel(50, 50)
-
+const caveclass = new cave(100, 500)
 function frame(){
     if (playerClass.alive){
         ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -53,9 +54,10 @@ function frame(){
         keyclass.draw(ctx);     
         
         chest.draw(ctx, inventoryclass);
-        
         heartobj.draw(ctx, inventoryclass);
-        
+        caveclass.draw(ctx, inventoryclass);
+
+
         shovelclass.check(playerClass, inventoryclass);
         shovelclass.draw(ctx); 
         
@@ -64,7 +66,7 @@ function frame(){
 
         chest.check(playerClass, inventoryclass, ctx);
         heartobj.check(playerClass, inventoryclass, ctx);
-
+        caveclass.check(playerClass, inventoryclass, ctx);
         
         inventoryclass.draw(ctx, keyclass, shovelclass);
         

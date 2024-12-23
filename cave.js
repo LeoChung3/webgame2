@@ -1,5 +1,5 @@
 
-export default class chestobjective 
+export default class cave 
 {
     constructor(x,y) 
     {
@@ -11,11 +11,10 @@ export default class chestobjective
     }
     draw(ctx)
         {
-
-            const imagePath = './images/chest.png';
+            const imagePath = './images/cave.png';
             const img = new Image();
             img.src = imagePath;
-            ctx.drawImage(img, this.xpos, this.ypos, 40, 40);
+            ctx.drawImage(img, this.xpos, this.ypos, 64, 64);
         }
 
 
@@ -31,14 +30,14 @@ export default class chestobjective
                 var heartalreadyobtained = false;
                     for (const i in inventory.inventory)
                     {
-                        if (inventory.inventory[i] == "heart")
+                        if (inventory.inventory[i] == "heart2")
                         {
                             heartalreadyobtained = true;
                         }
                     }
                     if (heartalreadyobtained == false)
                     {
-                        inventory.inventory.push("heart");
+                        inventory.inventory.push("heart2");
                     }
 
                 ctx.save();
@@ -52,14 +51,14 @@ export default class chestobjective
 
 
 
-                const imagePath = './images/heart.png';
+                const imagePath = './images/heart22.png';
                 const img = new Image();
                 img.src = imagePath;
                 ctx.drawImage(img, 150, 150, 450, 450); // Scale image to fit canvas
 
                 ctx.font = "30px Arial";
                 ctx.fillStyle = "red";
-                ctx.fillText("=you found my red heart :D, i love you <3=", 110, 600);
+                ctx.fillText("===you found my green heart :DDD===", 110, 600);
                 ctx.fillText("==i fill this gift with love for you, i know im==", 110, 630);
                 ctx.fillText("far away, and you didnt want anything but", 110, 660);
                 ctx.fillText("i hope you're happy with something like this", 110, 690);
@@ -71,11 +70,11 @@ export default class chestobjective
     {
         //playersize = 37,43
         var playerpos = player.getpos();
-        if ((playerpos[0] + 18) <= this.xpos + 40)
+        if ((playerpos[0] + 18) <= this.xpos + 64)
         {
             if ((playerpos[0] + 18) >= this.xpos)
             {
-                if ((playerpos[1]+21) <= this.ypos+ 40)
+                if ((playerpos[1]+21) <= this.ypos+ 64)
                 {
                     if ((playerpos[1]+21) >= this.ypos){
                         this.colliding = true;
@@ -89,7 +88,7 @@ export default class chestobjective
     checkifusingkey(inventory)
     {
        
-            this.usingkey = inventory.getitemchecks("key");
+            this.usingkey = inventory.getitemchecks("shovel");
         
     }
 }
