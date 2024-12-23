@@ -25,7 +25,8 @@ export default class cave
         this.checkifusingkey(inventory);
 
         if(this.colliding == true){
-            if(this.usingkey == true){
+            if(this.usingkey == true)
+                {
                 this.open = true; 
                 var heartalreadyobtained = false;
                     for (const i in inventory.inventory)

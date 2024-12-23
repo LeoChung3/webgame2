@@ -46,9 +46,10 @@ function frame(){
         
         
         gridclass.drawgrid(ctx);
+
         ctx.font = "40px Arial";
         ctx.fillStyle = "red";
-        ctx.fillText("commit 21", 0, 50);
+        ctx.fillText("commit 30", 0, 50);
         
         keyclass.check(playerClass, inventoryclass); 
         keyclass.draw(ctx);     
@@ -70,16 +71,6 @@ function frame(){
         
         inventoryclass.draw(ctx, keyclass, shovelclass);
         
-    }
-    if (!playerClass.alive){
-
-        //  if the player is dead, this part of the code is ran instead of the above
-        
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        ctx.font = "30px Arial";
-        ctx.fillStyle = "red";
-        ctx.fillText("You Died", 340, 400);
-        ctx.fillText("Click Restart Game", 270, 450);
     }
     requestAnimationFrame(frame)
 
