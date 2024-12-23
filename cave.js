@@ -60,9 +60,9 @@ export default class cave
                 ctx.font = "30px Arial";
                 ctx.fillStyle = "red";
                 ctx.fillText("===you found my green heart :DDD===", 110, 600);
-                ctx.fillText("==i fill this gift with love for you, i know im==", 110, 630);
-                ctx.fillText("far away, and you didnt want anything but", 110, 660);
-                ctx.fillText("i hope you're happy with something like this", 110, 690);
+                ctx.fillText("i know this game thats just a site isnt much", 110, 630);
+                ctx.fillText("but i hope that, you do enjoy this little game", 110, 660);
+                ctx.fillText("i love you sweety :)", 110, 690);
 
             }
         }
