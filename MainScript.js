@@ -49,7 +49,7 @@ function frame(){
 
         ctx.font = "40px Arial";
         ctx.fillStyle = "red";
-        ctx.fillText("commit 30", 0, 50);
+        ctx.fillText("commit 32", 0, 50);
         
         keyclass.check(playerClass, inventoryclass); 
         keyclass.draw(ctx);     
